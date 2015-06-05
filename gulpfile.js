@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 
 //Parse styles
 gulp.task('style', function() {
-    gulp.src('src/sass/**/*.scss')
+    gulp.src('src/sass/**/*.{scss,css}')
         .pipe(concat('style.scss'))
         .pipe(sass()
             .on('error', sass.logError))
@@ -46,7 +46,7 @@ gulp.task('build', ['style', 'script']);
 //Watch and livereload everything
 gulp.task('default', function() {
     livereload.listen();
-    gulp.watch('src/sass/**/*.scss',['style']);
+    gulp.watch('src/sass/**/*.{scss,css}',['style']);
     gulp.watch('src/js/**/*.js',['script']);
     gulp.watch('*.html').on('change', function(file) {
         livereload.changed(file.path);

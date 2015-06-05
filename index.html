@@ -15,9 +15,9 @@
         <h1>Path items</h1>
         <p ng-repeat="path in paths">{{path}}</p>
 
-        <h1>Path string</h1>
+        <h1>Path string <div class="button" id="copy-clipboard-button"><span class="icon icon-paste"></span> <span class="buttontext">Copy to clipboard</span></div></h1>
         <div>
-            <input class="path-string" ng-value="getPathString()" />
+            <input class="path-string" id="path-string-field" ng-value="getPathString()" />
         </div>
     </div>
     </body>

@@ -1,8 +1,42 @@
-body{
-  text-align:center;
+body {
+  font-family: "Open Sans", sans-serif;
 }
 
-.path-string {
-  width: calc(100% - 10px) ;
+
+div.button {
+  display: inline-block;
+  vertical-align: middle;
+  height: 25px;
   padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 25px;
+  color: #ffffff;
+  background-color: #000000;
+  transition: color 0.5s;
+
+  span.icon {
+    vertical-align: middle;
+    font-size: 18px;
+  }
+
+  .buttontext {
+    vertical-align: middle;
+  }
+
+  &.button-good {
+    color: #9fff65;
+  }
+}
+h1 div.button {
+  line-height: 2em;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+
+  &.path-string {
+    width: calc(100% - 10px) ;
+  }
 }

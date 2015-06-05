@@ -13,6 +13,7 @@
   ],
   "author": "Koen van Zuijlen",
   "license": "ISC",
+  "readme": "README.md",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-concat": "^2.5.2",

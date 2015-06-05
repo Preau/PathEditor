@@ -13,3 +13,4 @@ Then run the command
     gulp build
 
 This will compile the JavaScript and CSS files.
+Path Editor is now ready for use

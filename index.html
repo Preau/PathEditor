@@ -7,9 +7,14 @@
         <script src="js/script.min.js"></script>
     </head>
     <body>
-    <h1>Path</h1>
     <div ng-controller="pathEditorController as pathEditor">
+        <h1>Path items</h1>
         <p ng-repeat="path in paths">{{path}}</p>
+
+        <h1>Path string</h1>
+        <div>
+            <input class="path-string" ng-value="getPathString()" />
+        </div>
     </div>
     </body>
 </html>

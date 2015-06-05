@@ -40,16 +40,18 @@ gulp.task('script', function() {
         .pipe(livereload())
 });
 
-//Build everything
-gulp.task('build', ['style', 'script']);
-
 //Watch and livereload everything
-gulp.task('default', function() {
+gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch('src/sass/**/*.{scss,css}',['style']);
-    gulp.watch('src/js/**/*.js',['script']);
-    gulp.watch('*.html').on('change', function(file) {
+    gulp.watch('src/sass/**/*.{scss,css}', ['style']);
+    gulp.watch('src/js/**/*.js', ['script']);
+    gulp.watch('*.html').on('change', function (file) {
         livereload.changed(file.path);
     });
 });
-gulp.task('watch', ['default']);
+
+//Build everything
+gulp.task('build', ['style', 'script']);
+
+//Build everything then watch it
+gulp.task('default', ['build', 'watch']);

@@ -4,8 +4,7 @@ angular.module('pathEditor', [])
 
         //Retrieve PATH variable from system
         $scope.getPaths = function() {
-            $http.post('path_io.php',
-                {action:'getpaths'})
+            $http.get('path_io.php')
                 .success(function(data) {
                     $scope.paths = data;
             });

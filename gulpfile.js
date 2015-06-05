@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
     minifyCss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
@@ -15,6 +16,10 @@ gulp.task('style', function() {
         .pipe(concat('style.scss'))
         .pipe(sass()
             .on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['> 5%', 'last 2 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest('./css/'))
         .pipe(minifyCss())
         .pipe(rename(function(path) {

@@ -13,9 +13,8 @@ var gulp = require('gulp'),
 gulp.task('style', function() {
     gulp.src('src/sass/**/*.scss')
         .pipe(concat('style.scss'))
-        .pipe(sass({
-            errorLogToConsole: true
-        }))
+        .pipe(sass()
+            .on('error', sass.logError))
         .pipe(gulp.dest('./css/'))
         .pipe(minifyCss())
         .pipe(rename(function(path) {
@@ -53,3 +52,4 @@ gulp.task('default', function() {
         livereload.changed(file.path);
     });
 });
+gulp.task('watch', ['default']);

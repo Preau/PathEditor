@@ -41,6 +41,9 @@ gulp.task('script', function() {
         .pipe(livereload())
 });
 
+//Build everything
+gulp.task('build', ['style', 'script']);
+
 //Watch and livereload everything
 gulp.task('default', function() {
     livereload.listen();

@@ -15,5 +15,10 @@ angular.module('pathEditor', [])
             return $scope.paths.join(';');
         };
 
+        //Sort paths alphabeticcally
+        $scope.sortPaths = function() {
+            $scope.paths.sort();
+        };
+
         $scope.getPaths();
     });

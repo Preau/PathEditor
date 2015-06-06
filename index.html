@@ -11,10 +11,15 @@
     </head>
     <body>
     <div ng-controller="pathEditorController as pathEditor">
-        <h1>Path items</h1>
+        <h1>Paths
+            <div class="button" ng-click="sortPaths()"><span class="icon icon-sort-alpha-asc"></span> <span class="buttontext">Sort items</span></div>
+        </h1>
         <p ng-repeat="path in paths">{{path}}</p>
 
-        <h1>Path string <div class="button" id="copy-clipboard-button"><span class="icon icon-paste"></span> <span class="buttontext">Copy to clipboard</span></div></h1>
+        <h1>Path
+            <div class="button" id="copy-clipboard-button"><span class="icon icon-paste"></span> <span class="buttontext">Copy to clipboard</span></div>
+        </h1>
+        <p>Paste this into your Path variable.</p>
         <div>
             <input class="path-string" id="path-string-field" ng-value="getPathString()" />
         </div>

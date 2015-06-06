@@ -37,5 +37,10 @@ angular.module('pathEditor', [])
             });
         };
 
+        //Delete an item from path
+        $scope.deletePath = function(index) {
+            $scope.paths.splice(index, 1);
+        };
+
         $scope.getPaths();
     });

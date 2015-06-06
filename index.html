@@ -16,6 +16,7 @@
         </h1>
         <div ng-repeat="path in paths" class="path-item">
             <input type="text" ng-model="path.name" />
+            <div class="button button-bad" ng-click="deletePath($index)"><span class="icon icon-cross"></span></div>
         </div>
         <h1>Path
             <div class="button" id="copy-clipboard-button"><span class="icon icon-paste"></span> <span class="buttontext">Copy to clipboard</span></div>

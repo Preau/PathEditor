@@ -29,6 +29,19 @@ gulp.task('style', function() {
         .pipe(livereload())
 });
 
+//Parse libraries
+gulp.task('library', function() {
+    //JS Files
+    gulp.src(['node_modules/angular/angular.min.js',
+        'node_modules/zeroclipboard/dist/ZeroClipboard.min.js'])
+        .pipe(concat('library.js'))
+        .pipe(gulp.dest('./lib/'));
+
+    //Required other files
+    gulp.src(['node_modules/zeroclipboard/dist/ZeroClipboard.swf'])
+        .pipe(gulp.dest('./lib/'));
+});
+
 //Parse scripts
 gulp.task('script', function() {
     gulp.src('src/js/**/*.js')
@@ -56,7 +69,7 @@ gulp.task('watch', function() {
 });
 
 //Build everything
-gulp.task('build', ['style', 'script']);
+gulp.task('build', ['style', 'script', 'library']);
 
 //Build everything then watch it
 gulp.task('default', ['build', 'watch']);

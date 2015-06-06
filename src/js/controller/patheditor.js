@@ -6,18 +6,35 @@ angular.module('pathEditor', [])
         $scope.getPaths = function() {
             $http.get('path_io.php')
                 .success(function(data) {
-                    $scope.paths = data;
+                    for(var i = 0; i < data.length; i++) {
+                        $scope.paths.push({
+                            name: data[i]
+                        });
+                    }
             });
         };
 
         //Get string to input back into PATH variable
         $scope.getPathString = function() {
-            return $scope.paths.join(';');
+            var path = '';
+            for(var i = 0; i < $scope.paths.length; i++) {
+                if(i > 0) {
+                    path += ';';
+                }
+                path += $scope.paths[i].name;
+            }
+            return path;
         };
 
         //Sort paths alphabeticcally
         $scope.sortPaths = function() {
-            $scope.paths.sort();
+            $scope.paths.sort(function(a,b) {
+                if(a.name > b.name) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            });
         };
 
         $scope.getPaths();

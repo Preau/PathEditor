@@ -2,6 +2,10 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+input {
+  padding: 5px;
+  border-radius: 5px;
+}
 
 div.button {
   display: inline-block;
@@ -29,11 +33,14 @@ div.button {
   }
 }
 
-input {
-  padding: 5px;
-  border-radius: 5px;
-
-  &.path-string {
-    width: calc(100% - 10px) ;
+.path-item {
+  margin-bottom: 5px;
+  
+  input {
+    width: calc(100% - 10px);
   }
+}
+
+.path-string {
+  width: calc(100% - 10px);
 }

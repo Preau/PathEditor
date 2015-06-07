@@ -4,6 +4,7 @@
         <title>Path Editor</title>
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="lib/library.css" rel="stylesheet" type="text/css">
         <link href="css/style.min.css" rel="stylesheet" type="text/css">
 
         <script src="lib/library.js"></script>
@@ -15,9 +16,12 @@
             <div class="button" ng-click="sortPaths()"><span class="icon icon-sort-alpha-asc"></span> <span class="buttontext">Sort items</span></div>
         </h1>
         Current items
-        <div ng-repeat="path in paths" class="path-item">
-            <input type="text" ng-model="path.name" />
-            <div class="button button-bad" ng-click="deletePath($index)"><span class="icon icon-cross"></span></div>
+        <div data-ng-model="paths" data-as-sortable="board.dragControlListeners" >
+            <div data-ng-repeat="path in paths" class="path-item" data-as-sortable-item>
+                <div class="button button-transparent" data-as-sortable-item-handle><span class="icon icon-menu2" ></span></div>
+                <input type="text" ng-model="path.name" />
+                <div class="button button-bad" ng-click="deletePath($index)"><span class="icon icon-cross"></span></div>
+            </div>
         </div>
         <div class="path-item" id="path-item-new">
             New item

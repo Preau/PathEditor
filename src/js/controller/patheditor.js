@@ -1,4 +1,4 @@
-angular.module('pathEditor', [])
+angular.module('pathEditor', ['ui.sortable'])
     .controller('pathEditorController', function($scope, $http) {
         $scope.paths = [];
 
@@ -26,7 +26,7 @@ angular.module('pathEditor', [])
             return path;
         };
 
-        //Sort paths alphabeticcally
+        //Sort path items alphabeticcally
         $scope.sortPaths = function() {
             $scope.paths.sort(function(a,b) {
                 if(a.name.toLowerCase() > b.name.toLowerCase()) {
@@ -37,18 +37,24 @@ angular.module('pathEditor', [])
             });
         };
 
-        //Delete an item from path
+        //Delete a path item
         $scope.deletePath = function(index) {
             $scope.paths.splice(index, 1);
         };
 
+        //Add a path item
         $scope.addPath = function(path) {
-            if(path != "") {
+            if(path !== "") {
                 $scope.paths.push({
                     name: path
                 });
                 $scope.newpath = "";
             }
+        };
+
+        //Listeners for drag and drop
+        $scope.dragControlListeners = {
+            accept: function (sourceItemHandleScope, destSortableScope) {return true;}
         };
 
         $scope.getPaths();

@@ -27,6 +27,7 @@
     "gulp-sass": "^2.0.1",
     "gulp-uglify": "^1.2.0",
     "jshint-stylish": "^2.0.0",
+    "ng-sortable": "^1.2.2",
     "zeroclipboard": "^2.2.0"
   }
 }

@@ -35,13 +35,22 @@ div.button {
   &.button-bad {
     color: #ff6060;
   }
+
+  &.button-transparent {
+    color: #000000;
+    background-color: inherit;
+  }
 }
 
 .path-item {
   margin-bottom: 5px;
 
   input {
-    width: calc(100% - 45px);
+    width: calc(100% - 85px);
+  }
+
+  &#path-item-new input {
+    width: calc(100% - 46px);
   }
 }
 

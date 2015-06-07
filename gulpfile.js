@@ -32,9 +32,17 @@ gulp.task('style', function() {
 //Parse libraries
 gulp.task('library', function() {
     //JS Files
-    gulp.src(['node_modules/angular/angular.min.js',
+    gulp.src([
+        'node_modules/angular/angular.min.js',
+        'node_modules/ng-sortable/dist/ng-sortable.min.js',
         'node_modules/zeroclipboard/dist/ZeroClipboard.min.js'])
         .pipe(concat('library.js'))
+        .pipe(gulp.dest('./lib/'));
+
+    //CSS Files
+    gulp.src([
+        'node_modules/ng-sortable/dist/ng-sortable.min.css'])
+        .pipe(concat('library.css'))
         .pipe(gulp.dest('./lib/'));
 
     //Required other files

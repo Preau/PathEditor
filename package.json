@@ -1,6 +1,6 @@
 {
   "name": "patheditor",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Path editor for Windows",
   "main": "index.php",
   "repository": {

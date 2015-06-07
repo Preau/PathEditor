@@ -14,9 +14,15 @@
         <h1>Path items
             <div class="button" ng-click="sortPaths()"><span class="icon icon-sort-alpha-asc"></span> <span class="buttontext">Sort items</span></div>
         </h1>
+        Current items
         <div ng-repeat="path in paths" class="path-item">
             <input type="text" ng-model="path.name" />
             <div class="button button-bad" ng-click="deletePath($index)"><span class="icon icon-cross"></span></div>
+        </div>
+        <div class="path-item" id="path-item-new">
+            New item
+            <input type="text" id="path-new" ng-model="newpath" />
+            <div class="button button-good" ng-click="addPath(newpath)"><span class="icon icon-plus"></span></div>
         </div>
         <h1>Path
             <div class="button" id="copy-clipboard-button"><span class="icon icon-paste"></span> <span class="buttontext">Copy to clipboard</span></div>

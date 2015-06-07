@@ -42,5 +42,14 @@ angular.module('pathEditor', [])
             $scope.paths.splice(index, 1);
         };
 
+        $scope.addPath = function(path) {
+            if(path != "") {
+                $scope.paths.push({
+                    name: path
+                });
+                $scope.newpath = "";
+            }
+        };
+
         $scope.getPaths();
     });
